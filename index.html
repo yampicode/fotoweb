@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6D4C41">
+    
+    <!-- Meta tags para SEO -->
+    <title>Alegrafiphotos - Fotografía y Edición Profesional</title>
+    <meta name="description" content="Alegrafiphotos: Servicios profesionales de fotografía y edición. Capturamos tus momentos especiales con creatividad y calidad excepcional.">
+    <meta name="keywords" content="fotografía profesional, edición de fotos, sesiones fotográficas, fotografía de bodas, fotografía de eventos, Alegrafiphotos">
+    <meta name="author" content="Alegrafiphotos">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alegrafiphotos.com/">
+    <meta property="og:title" content="Alegrafiphotos - Fotografía y Edición Profesional">
+    <meta property="og:description" content="Servicios profesionales de fotografía y edición. Capturamos tus momentos especiales con creatividad y calidad.">
+    <meta property="og:image" content="https://alegrafiphotos.com/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alegrafiphotos.com/">
+    <meta property="twitter:title" content="Alegrafiphotos - Fotografía y Edición Profesional">
+    <meta property="twitter:description" content="Servicios profesionales de fotografía y edición. Capturamos tus momentos especiales con creatividad y calidad.">
+    <meta property="twitter:image" content="https://alegrafiphotos.com/images/twitter-image.jpg">
+    
+    <!-- Favicon y app icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://placehold.co/32x32/6D4C41/white?text=A">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://placehold.co/16x16/6D4C41/white?text=A">
+    <link rel="apple-touch-icon" href="https://placehold.co/180x180/6D4C41/white?text=A">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Preload para la imagen hero -->
+    <link rel="preload" href="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" as="image">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variables y reset - Mobile First */
+        :root {
+            --primary-color: #6D4C41;
+            --secondary-color: #FF8A65;
+            --dark-color: #4E342E;
+            --light-color: #F5F5F5;
+            --text-color: #212121;
+            --background-color: #FFFFFF;
+            --overlay-color: rgba(0, 0, 0, 0.8);
+            --transition: all 0.3s ease;
+            --menu-width: 280px;
+            --container-padding: 1rem;
+            --section-spacing: 2rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 14px; /* Tamaño base más pequeño para móviles */
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            overflow-x: hidden;
+        }
+        
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        /* Mejoras de accesibilidad */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Header y navegación - Mobile First */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem var(--container-padding);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            z-index: 101;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            margin-right: 0.5rem;
+            font-size: 1.8rem;
+            background-color: white;
+            color: var(--primary-color);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        /* Menú móvil - Prioridad en diseño mobile first */
+        .mobile-menu-button {
+            display: flex;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 101;
+            width: 40px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-button:hover, .mobile-menu-button:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+            outline: none;
+        }
+        
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 98;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100%;
+            background-color: white;
+            z-index: 99;
+            padding: 5rem 1.5rem 2rem;
+            overflow-y: auto;
+            transition: right 0.4s ease;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-menu.active {
+            right: 0;
+            animation: slideIn 0.4s ease;
+        }
+        
+        @keyframes slideIn {
+            from { right: -280px; }
+            to { right: 0; }
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+        }
+        
+        .mobile-menu li {
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.4s ease;
+        }
+        
+        .mobile-menu.active li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .mobile-menu li:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu li:nth-child(2) { transition-delay: 0.15s; }
+        .mobile-menu li:nth-child(3) { transition-delay: 0.2s; }
+        .mobile-menu li:nth-child(4) { transition-delay: 0.25s; }
+        .mobile-menu li:nth-child(5) { transition-delay: 0.3s; }
+        
+        .mobile-menu a {
+            display: flex;
+            align-items: center;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu a:hover, .mobile-menu a:focus {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            outline: none;
+        }
+        
+        .mobile-menu a i {
+            margin-right: 1rem;
+            width: 24px;
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+        
+        .menu-divider {
+            height: 1px;
+            background-color: #eee;
+            margin: 1.5rem 0;
+        }
+        
+        .mobile-menu-actions {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .mobile-menu-actions .btn {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .social-menu {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .social-menu a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            margin: 0 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .social-menu a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Menú de escritorio - Oculto por defecto en mobile first */
+        .desktop-menu {
+            display: none;
+        }
+        
+        /* Contenido principal - Optimizado para móviles */
+        main {
+            width: 100%;
+            padding: var(--container-padding);
+        }
+        
+        section {
+            margin-bottom: var(--section-spacing);
+        }
+        
+        /* Hero section con imagen de fondo */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 500px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: var(--section-spacing);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 1.5rem;
+            z-index: 1;
+            animation: fadeInUp 1s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin: 0 auto 2rem;
+            max-width: 100%;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover, .btn:focus {
+            background-color: #F4511E;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            outline: none;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 0.5rem auto;
+        }
+        
+        /* Servicios - Grid de una columna para móviles */
+        .services-grid, .testimonials-grid, .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .service-card, .testimonial-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover, .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+        }
+        
+        .service-card h3, .testimonial-card h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-card {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--light-color);
+            position: absolute;
+            top: -15px;
+            left: 15px;
+            line-height: 1;
+            z-index: 0;
+        }
+        
+        .testimonial-text {
+            flex-grow: 1;
+            margin-bottom: 1.2rem;
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: right;
+            font-size: 0.9rem;
+        }
+        
+        /* Galería - 2 columnas para móviles */
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            aspect-ratio: 1/1;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+            background-color: #EEE;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+        
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay-icon {
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--overlay-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+            padding: 1rem;
+        }
+        
+        .lightbox.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 0.5rem;
+        }
+        
+        .lightbox-button {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .lightbox-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .lightbox-caption {
+            color: white;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+        
+        /* Sección about */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background-color: #EEE;
+            aspect-ratio: 1/1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            color: var(--primary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* Formulario de contacto */
+        .contact-form {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            width: 100%;
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark-color);
+            font-size: 0.9rem;
+        }
+        
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(109, 76, 65, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem var(--container-padding);
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-color);
+            margin-top: 0.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            text-decoration:none;
+        }
+        
+        .social-links a:hover, .social-links a:focus {
+            color: var(--secondary-color);
+            background: rgba(255,255,255,0.2);
+            outline: none;
+            transform: translateY(-2px);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* PWA install prompt */
+        .install-prompt {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            left: 15px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .install-prompt.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .install-prompt p {
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            font-size: 0.9rem;
+        }
+        
+        .prompt-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.5rem;
+        }
+        
+        .prompt-buttons button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .prompt-accept {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .prompt-accept:hover {
+            background-color: var(--dark-color);
+        }
+        
+        .prompt-dismiss {
+            background-color: #f0f0f0;
+        }
+        
+        .prompt-dismiss:hover {
+            background-color: #e0e0e0;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Media Queries para tablets */
+        @media (min-width: 768px) {
+            html {
+                font-size: 15px;
+            }
+            
+            :root {
+                --container-padding: 2rem;
+                --section-spacing: 3rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .services-grid, .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .about-content {
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            .about-image, .about-text {
+                flex: 1;
+            }
+            
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .footer-section {
+                flex: 1;
+            }
+            
+            .install-prompt {
+                left: auto;
+                right: 20px;
+                max-width: 320px;
+            }
+        }
+        
+        /* Media Queries para escritorio */
+        @media (min-width: 1024px) {
+            html {
+                font-size: 16px;
+            }
+            
+            :root {
+                --container-padding: 2rem;
+            }
+            
+            .mobile-menu-button {
+                display: none;
+            }
+            
+            .desktop-menu {
+                display: block;
+            }
+            
+            .desktop-menu ul {
+                display: flex;
+                list-style: none;
+            }
+            
+            .desktop-menu li {
+                margin-left: 2rem;
+            }
+            
+            .desktop-menu a {
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+                padding: 0.5rem;
+                border-radius: 4px;
+                transition: var(--transition);
+                position: relative;
+            }
+            
+            .desktop-menu a::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--secondary-color);
+                transition: var(--transition);
+            }
+            
+            .desktop-menu a:hover::after, .desktop-menu a:focus::after {
+                width: 100%;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .hero-content {
+                padding: 0;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            main {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --primary-color: #000;
+                --secondary-color: #000;
+                --dark-color: #000;
+                --light-color: #fff;
+                --text-color: #000;
+                --background-color: #fff;
+            }
+            
+            .service-card, .testimonial-card, .contact-form {
+                border: 2px solid black;
+            }
+            
+            .mobile-menu {
+                border-left: 2px solid black;
+            }
+        }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            html {
+                scroll-behavior: auto;
+            }
+            
+            .gallery-item:hover .gallery-image {
+                transform: none;
+            }
+            
+            .mobile-menu li {
+                transition: none;
+                transform: none;
+            }
+        }
+        
+        /* Estilos para mejorar el CLS (Cumulative Layout Shift) */
+        .gallery-image, .about-image, .hero::before {
+            will-change: transform;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">A</span>
+                <span>Alegrafiphotos</span>
+            </a>
+            
+            <nav class="desktop-menu">
+                <ul>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#gallery">Galería</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#testimonials">Testimonios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-button" id="mobileMenuButton" aria-label="Abrir menú" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Menú móvil mejorado -->
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+    
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#services"><i class="fas fa-camera"></i>Servicios</a></li>
+            <li><a href="#gallery"><i class="fas fa-images"></i>Galería</a></li>
+            <li><a href="#about"><i class="fas fa-users"></i>Nosotros</a></li>
+            <li><a href="#testimonials"><i class="fas fa-star"></i>Testimonios</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i>Contacto</a></li>
+        </ul>
+        
+        <div class="menu-divider"></div>
+        
+        <div class="mobile-menu-actions">
+            <a href="#contact" class="btn">Reservar sesión</a>
+            <a href="tel:+34912345678" class="btn" style="background-color: #4CAF50;">
+                <i class="fas fa-phone"></i> Llamar ahora
+            </a>
+        </div>
+        
+        <div class="social-menu">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+    
+    <main id="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Capturamos tus momentos especiales</h1>
+                <p>Servicios profesionales de fotografía y edición para immortalizar tus recuerdos más preciados con creatividad y calidad excepcional.</p>
+                <a href="#contact" class="btn">Reserva tu sesión</a>
+            </div>
+        </section>
+        
+        <section id="services">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="card-content">
+                        <span class="service-icon" aria-hidden="true">💒</span>
+                        <h3>Fotografía de Bodas</h3>
+                        <p>Capturamos la magia y emoción de tu día especial con un enfoque artístico y discreto para que revivas cada momento.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-content">
+                        <span class="service-icon" aria-hidden="true">👨‍👩‍👧‍👦</span>
+                        <h3>Sesiones Familiares</h3>
+                        <p>Fotografías naturales y espontáneas que reflejan la esencia y conexión única de tu familia en entornos naturales o estudio.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-content">
+                        <span class="service-icon" aria-hidden="true">🎂</span>
+                        <h3>Eventos Especiales</h3>
+                        <p>Desde cumpleaños hasta aniversarios, documentamos tus celebraciones con imágenes llenas de vida y emoción.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-content">
+                        <span class="service-icon" aria-hidden="true">🖼️</span>
+                        <h3>Edición Profesional</h3>
+                        <p>Servicios de retoque, corrección de color y composición para realzar la belleza de tus fotografías.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-content">
+                        <span class="service-icon" aria-hidden="true">🏢</span>
+                        <h3>Fotografía Commercial</h3>
+                        <p>Imágenes profesionales para productos, restaurantes, arquitectura y negocios que destacan lo mejor de tu marca.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-content">
+                        <span class="service-icon" aria-hidden="true">📸</span>
+                        <h3>Sesiones Creativas</h3>
+                        <p>Sesiones artísticas y conceptuales para portafolios, libros o proyectos personales con un enfoque único y vanguardista.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="gallery">
+            <h2 class="section-title">Galería de Trabajos</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" tabindex="0">
+                    <div class="gallery-image">📷</div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="gallery-item" tabindex="0">
+                    <div class="gallery-image">📷</div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="gallery-item" tabindex="0">
+                    <div class="gallery-image">📷</div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="gallery-item" tabindex="0">
+                    <div class="gallery-image">📷</div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="gallery-item" tabindex="0">
+                    <div class="gallery-image">📷</div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="gallery-item" tabindex="0">
+                    <div class="gallery-image">📷</div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="gallery-item" tabindex="0">
+                    <div class="gallery-image">📷</div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-icon">🔍</span>
+                    </div>
+                </div>
+                <div class="gallery-item" tabindex="0">
+                    <div class="gallery-image">📷</div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-overlay-icon">🔍</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <div class="about-content">
+                <div class="about-image">📷</div>
+                <div class="about-text">
+                    <p>En Alegrafiphotos, tenemos una pasión por capturar momentos que perduren para siempre. Con más de 10 años de experiencia en el sector, nuestro equipo de fotógrafos y editores profesionales se dedica a crear imágenes excepcionales que cuentan historias únicas.</p>
+                    <p>Utilizamos equipos de última generación y técnicas innovadoras para garantizar que cada fotografía sea una obra de arte. Nuestro enfoque personalizado nos permite adaptarnos a tus necesidades y visiones específicas.</p>
+                    <p>Creemos que la fotografía va más allá de simplemente tomar pictures; se trata de conectar con las personas, entender sus historias y capturar la esencia de cada momento especial.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="testimonials">
+            <h2 class="section-title">Lo que Dicen Nuestros Clientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="card-content">
+                        <p class="testimonial-text">Quedamos maravillados con las fotos de nuestra boda. Capturaron cada momento especial con tanta sensibilidad y arte. ¡Superaron todas nuestras expectativas!</p>
+                        <p class="testimonial-author">— Elena y Javier</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="card-content">
+                        <p class="testimonial-text">Contraté sus servicios para las fotos de mi restaurante y el resultado fue espectacular. Las imágenes transmiten perfectamente la esencia de nuestro establecimiento.</p>
+                        <p class="testimonial-author">— Carlos, Restaurante La Terraza</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="card-content">
+                        <p class="testimonial-text">Las sesiones familiares fueron una experiencia increíble. Supieron captar la personalidad de cada miembro de la familia y las fotos son naturales y llenas de vida.</p>
+                        <p class="testimonial-author">— Familia Rodríguez</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Servicio de interés</label>
+                        <select id="service" name="service" required aria-required="true">
+                            <option value="">Selecciona una opción</option>
+                            <option value="wedding">Fotografía de Bodas</option>
+                            <option value="family">Sesiones Familiares</option>
+                            <option value="events">Eventos Especiales</option>
+                            <option value="editing">Edición Profesional</option>
+                            <option value="commercial">Fotografía Commercial</option>
+                            <option value="creative">Sesiones Creativas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Alegrafiphotos</h3>
+                <p>Fotografía y edición profesional con un enfoque creativo y personalizado para capturar tus momentos más especiales.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: hola@alegrafiphotos.com</p>
+                <p>WhatsApp: +58 412-4228512</p>
+                <p>Dirección: Calle Creatividad, 23, Puerto Cabello</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Desarrollado por WEBZONA &copy; 2025 Alegrafiphotos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar lightbox">×</button>
+        <div class="lightbox-content">
+            <img class="lightbox-image" src="" alt="">
+            <div class="lightbox-nav">
+                <button class="lightbox-button" id="prevButton" aria-label="Imagen anterior">&#10094;</button>
+                <button class="lightbox-button" id="nextButton" aria-label="Imagen siguiente">&#10095;</button>
+            </div>
+            <p class="lightbox-caption"></p>
+        </div>
+    </div>
+    
+    <!-- PWA Install Prompt -->
+    <div class="install-prompt" id="installPrompt">
+        <p>¿Te gustaría instalar Alegrafiphotos en tu dispositivo para una mejor experiencia?</p>
+        <div class="prompt-buttons">
+            <button class="prompt-dismiss" id="dismissButton">Ahora no</button>
+            <button class="prompt-accept" id="installButton">Instalar</button>
+        </div>
+    </div>
+
+    <script>
+        // Funcionalidad del menú móvil mejorado
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const body = document.body;
+        
+        // Variable para controlar el estado del menú
+        let menuOpen = false;
+        
+        // Función para abrir el menú
+        function openMenu() {
+            menuOpen = true;
+            mobileMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            body.classList.add('menu-open');
+            mobileMenuButton.setAttribute('aria-expanded', 'true');
+            mobileMenuButton.innerHTML = '<i class="fas fa-times"></i>';
+            
+            // Deshabilitar el desplazamiento del fondo
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Función para cerrar el menú
+        function closeMenu() {
+            menuOpen = false;
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            body.classList.remove('menu-open');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
+            
+            // Habilitar el desplazamiento del fondo
+            document.body.style.overflow = '';
+        }
+        
+        // Función para alternar el menú
+        function toggleMenu() {
+            if (menuOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        }
+        
+        // Event listeners
+        mobileMenuButton.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMenu();
+        });
+        
+        menuOverlay.addEventListener('click', function() {
+            closeMenu();
+        });
+        
+        // Cerrar menú al hacer clic en un enlace
+        const menuLinks = document.querySelectorAll('.mobile-menu a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMenu();
+            });
+        });
+        
+        // Cerrar menú con la tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && menuOpen) {
+                closeMenu();
+            }
+        });
+        
+        // Mejorar accesibilidad del menú
+        mobileMenuButton.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
+            }
+        });
+        
+        // Cerrar menú al hacer clic fuera de él
+        document.addEventListener('click', (e) => {
+            if (menuOpen && !mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
+                closeMenu();
+            }
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.querySelector('.lightbox-image');
+        const lightboxCaption = document.querySelector('.lightbox-caption');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        // Sample images data (in a real scenario, these would be actual image URLs)
+        const images = [
+            { src: 'https://placehold.co/800x600/6D4C41/white?text=Imagen+1', caption: 'Sesión de boda en la playa' },
+            { src: 'https://placehold.co/800x600/6D4C41/white?text=Imagen+2', caption: 'Retrato familiar en el parque' },
+            { src: 'https://placehold.co/800x600/6D4C41/white?text=Imagen+3', caption: 'Fotografía comercial de producto' },
+            { src: 'https://placehold.co/800x600/6D4C41/white?text=Imagen+4', caption: 'Evento corporativo' },
+            { src: 'https://placehold.co/800x600/6D4C41/white?text=Imagen+5', caption: 'Sesión creativa en estudio' },
+            { src: 'https://placehold.co/800x600/6D4C41/white?text=Imagen+6', caption: 'Fotografía de naturaleza' },
+            { src: 'https://placehold.co/800x600/6D4C41/white?text=Imagen+7', caption: 'Retrato artístico' },
+            { src: 'https://placehold.co/800x600/6D4C41/white?text=Imagen+8', caption: 'Edición profesional' }
+        ];
+        
+        let currentImageIndex = 0;
+        
+        // Open lightbox when clicking on gallery items
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                currentImageIndex = index;
+                updateLightboxImage();
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+            });
+            
+            // Add keyboard support for gallery items
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    currentImageIndex = index;
+                    updateLightboxImage();
+                    lightbox.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        // Close lightbox
+        lightboxClose.addEventListener('click', closeLightbox);
+        
+        // Close lightbox when clicking on the background
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        
+        // Navigation between images
+        prevButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navigateImages(-1);
+        });
+        
+        nextButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navigateImages(1);
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('open')) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowLeft') {
+                    navigateImages(-1);
+                } else if (e.key === 'ArrowRight') {
+                    navigateImages(1);
+                }
+            }
+        });
+        
+        function updateLightboxImage() {
+            lightboxImage.src = images[currentImageIndex].src;
+            lightboxCaption.textContent = images[currentImageIndex].caption;
+            lightboxImage.alt = images[currentImageIndex].caption;
+        }
+        
+        function navigateImages(direction) {
+            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+            updateLightboxImage();
+        }
+        
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            document.body.style.overflow = ''; // Re-enable scrolling
+        }
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('¡Gracias por tu mensaje! Te contactaremos pronto para hablar sobre tu proyecto.');
+            contactForm.reset();
+        });
+        
+        // Service Worker Registration for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                })
+                .catch((error) => {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+            });
+        }
+        
+        // PWA Install Prompt
+        let deferredPrompt;
+        const installPrompt = document.getElementById('installPrompt');
+        const installButton = document.getElementById('installButton');
+        const dismissButton = document.getElementById('dismissButton');
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Show prompt after 8 seconds
+            setTimeout(() => {
+                installPrompt.classList.add('show');
+            }, 8000);
+        });
+        
+        installButton.addEventListener('click', () => {
+            installPrompt.classList.remove('show');
+            deferredPrompt.prompt();
+            
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted install prompt');
+                } else {
+                    console.log('User dismissed install prompt');
+                }
+                deferredPrompt = null;
+            });
+        });
+        
+        dismissButton.addEventListener('click', () => {
+            installPrompt.classList.remove('show');
+        });
+        
+        // Detect if the app is running as PWA
+        window.addEventListener('appinstalled', () => {
+            console.log('PWA was installed');
+        });
+        
+        // Preload hero image for better performance
+        window.addEventListener('load', function() {
+            const heroImage = new Image();
+            heroImage.src = 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80';
+        });
+    </script>
+</body>
+</html>
